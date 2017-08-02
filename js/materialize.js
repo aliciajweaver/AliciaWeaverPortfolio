@@ -10004,4 +10004,8 @@ $(document).ready(function(){
    $(".button-collapse").sideNav();
    $('ul.tabs').tabs();
    $('.carousel').carousel();
+   $('.slider').slider();
+});
+$('.slider').slider({
+height: '100%'
 });
