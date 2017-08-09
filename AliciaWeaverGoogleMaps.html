@@ -1,0 +1,107 @@
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <style>
+        #map {
+          width: 100%;
+          height: 80%;
+          background-color: grey;
+        }
+      </style>
+</head>
+<nav>
+<div class="nav-wrapper deep-purple accent-2">
+  <a href="index.html" class="brand-logo">Alicia Weaver</a>
+  <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <li><a href="AliciaWeaverPage1.html">Girls Who Code</a></li>
+    <li><a href="AliciaWeaverPage2.html">NYSCI</a></li>
+    <li><a href="AliciaWeaverPage3.html">1000 Girls 1000 Futures</a></li>
+    <li><a href="AliciaWeaverPage4.html">GOALS Navigators</a></li>
+    <li><a href="AliciaWeaverPage5.html">Photo Gallery</a></li>
+    <li><a href="AliciaWeaverGoogleMaps.html">Where I've Been</a></li>
+  </ul>
+</div>
+</nav>
+<body>
+  <h3>Where I've Been</h3>
+  <div id="map"></div>
+  <script>
+    function initMap() {
+      var uluru = {lat: 40.747331, lng: -73.851744};
+      var blargh = {lat: 40.723460, lng: -73.996312};
+      var blegh = {lat: 40.764527, lng: -73.999608};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: uluru
+      });
+      map.setMapTypeId('hybrid');
+      var Work = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+      var contentString = '<div id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h1 id="firstHeading" class="firstHeading">New York Hall of Science</h1>'+
+          '<div id="bodyContent">'+
+          '<p>Yea its cool...' +
+          '(last visited Saturday).</p>'+
+          '</div>'+
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+         content: contentString
+       });
+       var marker = new google.maps.Marker({
+         position: uluru,
+         map: map,
+         title: 'New York Hall of Science'
+       });
+       marker.addListener('click', function() {
+         infowindow.open(map, marker);
+       });
+      var MacBar = new google.maps.Marker({
+        position: blargh,
+        map: map
+      });
+      var OtherWork = new google.maps.Marker({
+        position: blegh,
+        map: map
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCN6JMK7RgNj22AddGOOBJzmqsfuLl3HUw&callback=initMap">
+  </script>
+  <footer class="page-footer deep-purple accent-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Alicia Weaver</h5>
+            <p class="grey-text text-lighten-4">Follow me on social media!</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="fa fa-linkedin fa-2x" href="https://www.linkedin.com/in/alicia-weaver/"></a></li>
+              <li><a class="fa fa-instagram fa-2x" href="https://www.instagram.com/aliciaj.weaver/"></a></li>
+              <li><a class="fa fa-twitter fa-2x" href="https://twitter.com/aliciaj_weaver"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014 Copyright Text
+        </div>
+      </div>
+    </footer>
+</body>
+</html>

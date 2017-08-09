@@ -10005,6 +10005,7 @@ $(document).ready(function(){
    $('ul.tabs').tabs();
    $('.carousel').carousel();
    $('.slider').slider();
+   Materialize.updateTextFields();
 });
 $('.slider').slider({
 height: '100%'
